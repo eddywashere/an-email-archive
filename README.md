@@ -2,6 +2,8 @@
 
 This project was built to archive email newsletters from Action Network but can work for any html email newsletter. It uses https://www.11ty.dev/ & https://tailwindcss.com/.
 
+Demo: https://an-email-archive.netlify.app/
+
 ## How to archive emails
 
 From Action Network:
