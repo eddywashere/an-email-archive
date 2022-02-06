@@ -1,0 +1,25 @@
+{% extends "_includes/default.njk" %}
+
+{% block title %}Newsletter Archive{% endblock %}
+
+{% block pageTitle %}Newsletter Archive{% endblock %}
+
+{% block content %}
+
+  <ul role="list" class="space-y-3 max-w-lg mx-auto">
+
+    {%- for post in collections.archive -%}
+      <li class="bg-white shadow overflow-hidden px-4 py-4 sm:px-6 sm:rounded-md">
+        <div>
+          <p class="text-xs text-gray-500">
+            <time datetime="{{post.fileSlug}}">{{post.data.formattedDate}}</time>
+          </p>
+          <a href="{{ post.url }}" class="mt-1 mb-1 block">
+            <p class="text-xl text-gray-900">{{ post.data.title }}</p>
+          </a>
+        </div>
+      </li>
+
+    {%- endfor -%}
+  </ul>
+{% endblock %}

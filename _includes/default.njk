@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+      {% block title %}Default Title{% endblock %}
+    </title>
+    <meta charset="UTF-8"/>
+    {% if description %}
+      <meta name="description" content="{{description}}"/>
+    {% endif %}
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"/>
+    <link rel="stylesheet" href="/style.css?v={% version %}"/>
+    <script src="/js/alpine.js?v={% version %}"></script>
+    {% block head %}{% endblock %}
+  </head>
+  <body class="bg-gray-100">
+    <div class="">
+      <div class="max-w-7xl mx-auto text-center pt-12 px-4 sm:px-6 lg:pt-16 lg:px-8 mb-8">
+        <h2 class="text-3xl font-extrabold tracking-tight text-gray-800 sm:text-4xl">
+          <span class="block">
+            {% block pageTitle %}Default Title{% endblock %}
+          </span>
+        </h2>
+        {# Don't need the action buttons? remove the following lines #}
+        <div class="mt-8 flex justify-center">
+          <div class="inline-flex rounded-md shadow">
+            <a href="#" class="inline-flex items-center justify-center px-3 py-2 border border-transparent text-base font-medium rounded-md text-white bg-red-600 hover:bg-red-700"> Subscribe</a>
+          </div>
+          <div class="ml-3 inline-flex">
+            <a href="#" class="inline-flex items-center justify-center px-3 py-2 border border-red-600 text-base font-medium rounded-md text-red-700 bg-red-100 hover:bg-red-200"> Join Us </a>
+          </div>
+        </div>
+        {# end actions #}
+      </div>
+    </div>
+  </div>
+
+  {% block content %}
+    {{ content | safe }}
+  {% endblock %}
+</body>
+</html>
